@@ -40,7 +40,7 @@ def quit():
 
 #UX
 ctk.set_appearance_mode(theme)
-ctk.set_default_color_theme("assets/theme.json")
+ctk.set_default_color_theme("theme.json")
 app = ctk.CTk()
 app.title('Loupe')
 app.geometry('350x500')
