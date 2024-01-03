@@ -1,18 +1,13 @@
-## 🔍Loupe
+## 🔍 Loupe
 A simple gui based tool to improve your productivity !
 
-## ⛏️Installation
+## ⚙️ Installation
 
 To execute this app, you will need python 3.11 (or newer) and the folowing modules :
 1) os
-2) subprocess
-3) minecraft_launcher_lib
-4) uuid
-5) eel
-6) configparser
-7) zipfile
+2) customtkinter
+3) configparser
 
-Before launching anything place this file in the same folder : https://drive.google.com/file/d/18X6ImjSPyJxehF6ItQzYtapck65CkfQO/view?usp=sharing
 
-## 🚀Usage
+## 🚀 Usage
 Once theses prerequisite are done, just execute the file named "app.py"
