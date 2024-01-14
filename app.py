@@ -1,96 +1,77 @@
-from tkinter import *
 import customtkinter as ctk
 import os
 import configparser
+import sys
+from PIL import Image
 
 #Fichier de configuration
 config  = configparser.ConfigParser()
 config.read('config.ini')
 
-#Variables
+#Shortcuts
 shortcut_a  = config['paths'].get('shortcut_a')
 shortcut_b  = config['paths'].get('shortcut_b')
 shortcut_c  = config['paths'].get('shortcut_c')
 shortcut_d  = config['paths'].get('shortcut_d')
-title_a = config['gui'].get('title_a')
-title_b = config['gui'].get('title_b')
-title_c = config['gui'].get('title_c')
-title_d = config['gui'].get('title_d')
-theme = config['gui'].get("theme")
+
+#Titles
+title_a = config['titles'].get('title_a')
+title_b = config['titles'].get('title_b')
+title_c = config['titles'].get('title_c')
+title_d = config['titles'].get('title_d')
+
+#Icons
+icon_a = config['icons'].get('icon_a')
+icon_b = config['icons'].get('icon_b')
+icon_c = config['icons'].get('icon_c')
+icon_d = config['icons'].get('icon_d')
+img1 = Image.open(icon_a)
+img2 = Image.open(icon_b)
+img3 = Image.open(icon_c)
+img4 = Image.open(icon_d)
+
+#Theme
+theme = config['colors'].get("theme")
 
 #Fonctions
 def a():
     os.system(shortcut_a)
-    app.quit()
+    sys.exit()
 
 def b():
     os.system(shortcut_b)
-    app.quit()
+    sys.exit()
 
 def c():
     os.system(shortcut_c)   
-    app.quit()
+    sys.exit()
 
 def d():
     os.system(shortcut_d)
-    app.quit()
+    sys.exit()
 
-def quit():
-    app.quit()
-
-#UX
+#GUI
 ctk.set_appearance_mode(theme)
-ctk.set_default_color_theme("theme.json")
+ctk.set_appearance_mode("dark")
 app = ctk.CTk()
 app.title('Loupe')
 app.geometry('350x500')
+app.iconbitmap('assets/app/iconv2.ico')
 
-button = ctk.CTkButton(master=app,
-                                 width=120,
-                                 height=32,
-                                 border_width=0,
-                                 corner_radius=8,
-                                 text=title_a,
-                                 command=a)
-button.place(relx=0.5, rely=0.17, anchor=ctk.CENTER)
+logo = ctk.CTkImage(Image.open("assets/app/iconv2.png"), size=(130, 130))
+logo = ctk.CTkLabel(app, image=logo, text=" ")
+logo.place(x = 175, y = 80, anchor = "center")
 
-button = ctk.CTkButton(master=app,
-                                 width=120,
-                                 height=32,
-                                 border_width=0,
-                                 corner_radius=8,
-                                 text=title_b,
-                                 command=b)
-button.place(relx=0.5, rely=0.37, anchor=ctk.CENTER)
+button = ctk.CTkButton(app, command=a, image=ctk.CTkImage(img4, size=(28, 28)), width=200, height=50, corner_radius=80, text=title_a, font=("Helvetica", 20, "bold"), fg_color="#000493", hover_color="#00036d")
+button.place(x= 175, y = 200, anchor=ctk.CENTER)
+button = ctk.CTkButton(app, command=b, image=ctk.CTkImage(img4, size=(28, 28)), width=200, height=50, corner_radius=80, text=title_b, font=("Helvetica", 20, "bold"), fg_color="#000493", hover_color="#00036d")
+button.place(x= 175, y = 280, anchor=ctk.CENTER)
+button = ctk.CTkButton(app, command=c, image=ctk.CTkImage(img4, size=(28, 28)), width=200, height=50, corner_radius=80, text=title_c, font=("Helvetica", 20, "bold"), fg_color="#000493", hover_color="#00036d")
+button.place(x= 175, y = 360, anchor=ctk.CENTER)
+button = ctk.CTkButton(app, command=d, image=ctk.CTkImage(img4, size=(28, 28)), width=200, height=50, corner_radius=80, text=title_d, font=("Helvetica", 20, "bold"), fg_color="#000493", hover_color="#00036d")
+button.place(x= 175, y = 440, anchor=ctk.CENTER)
 
-button = ctk.CTkButton(master=app,
-                                 width=120,
-                                 height=32,
-                                 border_width=0,
-                                 corner_radius=8,
-                                 text=title_c,
-                                 command=c)
-button.place(relx=0.5, rely=0.57, anchor=ctk.CENTER)
-
-button = ctk.CTkButton(master=app,
-                                 width=120,
-                                 height=32,
-                                 border_width=0,
-                                 corner_radius=8,
-                                 text=title_d,
-                                 command=d)
-button.place(relx=0.5, rely=0.77, anchor=ctk.CENTER)
-
-button = ctk.CTkButton(master=app,
-                                fg_color='#A60325',
-                                hover_color='#87031F',
-                                 width=120,
-                                 height=32,
-                                 border_width=0,
-                                 corner_radius=8,
-                                 text="Quitter",
-                                 command=quit)
-button.place(relx=0.5, rely=0.95, anchor=ctk.CENTER)
 
 #Démarrage du logiciel
+app.resizable(False, False)
 app.mainloop()
