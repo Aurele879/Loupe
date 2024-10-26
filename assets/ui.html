@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface</title>
+    <style>
+        /* Animation de fondu */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Appliquer l'animation au chargement de la page */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            animation: fadeIn 0.5s ease-in-out; /* Animation en fondu */
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 150px;
+            height: 150px;
+            background-image: url('lynx_logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-bottom: 20%;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+            padding: 15px 0;
+            width: 220px;
+            background-color: #f5b14a;
+            border: none;
+            border-radius: 10px;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 10%;
+            text-align: left; /* Aligne le texte à gauche pour mieux placer l'image */
+            height: 55px;
+        }
+        .button img {
+            width: 20px; /* Ajuste la taille de l'image pour qu'elle ne dépasse pas la hauteur du bouton */
+            height: 20px;
+            margin-right: 10px; /* Espace entre l'image et le texte */
+        }
+
+        .button:hover {
+            background-color: #e0a03e;
+        }
+
+        .round-button {
+            position: absolute;
+            top: -35px;
+            right: -70px;
+            width: 30px;
+            height: 30px;
+            background-color: #f4511e;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .round-button:hover {
+            background-color: #d3461b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo"></div>
+        <!-- Bouton A avec une image -->
+        <button id = "btn_a" class="button" onclick="pywebview.api.a()">
+            <img id="icon_a" src="tmp/icon_a.png" alt="Icon A">
+            <p id="title_a">A</p>
+        </button>
+        <!-- Bouton B avec une image -->
+        <button id = "btn_b" class="button" onclick="pywebview.api.b()">
+            <img id="icon_b" src="tmp/icon_b.png" alt="Icon B">
+            <p id="title_b">B</p>
+        </button>
+        <!-- Bouton C avec une image -->
+        <button id = "btn_c" class="button" onclick="pywebview.api.c()">
+            <img id="icon_c" src="tmp/icon_c.png" alt="Icon C">
+            <p id="title_c">C</p>
+        </button>
+        <!-- Bouton SETTINGS avec une image -->
+        <button id = "btn_s" class="button" onclick="pywebview.api.settings()">
+            <img id="icon_s" src="settings.png" alt="Icon Settings">
+            SETTINGS
+        </button>
+    </div>
+    <script>
+        function changeButtonName(Id, newName) {
+            var element = document.getElementById(Id)
+                element.innerText = newName;
+        }
+    </script>
+</body>
+</html>
+
