@@ -1,6 +1,6 @@
 <body>
     <h1>Lynx</h1>
-    <h4>Un outil simple pour améliorer votre productivité</h4>
+    <h2>Un outil simple pour améliorer votre productivité</h2>
     <img src="assets/lynx.ico">
 
     <h2>Installation</h2>
