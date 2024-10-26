@@ -4,7 +4,7 @@
     <img src="assets/lynx.ico">
 
     <h2>Installation</h2>
-    - [WINDOWS] Rendez vous dans les releases, extrayez le dossier compréssé, lancez "lynx.exe"
+    <p>- [WINDOWS] Rendez vous dans les releases, extrayez le dossier compréssé, lancez "lynx.exe"</p>
 </body>
 <style>
     body {
