@@ -5,8 +5,3 @@
     <p>Pour l'installer, rendez vous dans les releases, extrayez le dossier compréssé, lancez "lynx.exe"</p>
     
 </body>
-<style>
-    body {
-        text-align: center;
-    }
-</style>
