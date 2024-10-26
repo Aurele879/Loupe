@@ -4,5 +4,5 @@
     <img src="assets/lynx.ico">
     <p>Pour l'installer sur windows, rendez vous dans les releases, extrayez le dossier compréssé, lancez "lynx.exe"</p>.
     <h2>Illustration</h2>
-    <img src="assets/lynx.ico">
+    <img src="screenshot.png">
 </body>
